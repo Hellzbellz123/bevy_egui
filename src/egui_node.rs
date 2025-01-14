@@ -289,7 +289,7 @@ impl Node for EguiNode {
                     .clone();
                 let Some(key) = world
                     .resource::<RenderAssets<GpuImage>>()
-                    .get(&image_handle)
+                    .get(image_handle.id())
                     .map(EguiPipelineKey::from_gpu_image)
                 else {
                     return;
